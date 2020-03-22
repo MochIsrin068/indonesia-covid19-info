@@ -15,11 +15,14 @@ Data from https://github.com/mathdroid/indonesia-covid-19-api
 - npm start
   
 ## `Screen`
+
 ### `Desktop : `
-<img src="/screen/desktop.png"><br/>
-<img src="/screen/desktop_prov.png">
+
+![web](./screen/desktop.png)
+![web](./screen/desktop_prov.png)
 
 ### `Mobile : `
-<img src="/screen/mobile_home.png" width="32%">
-<img src="/screen/mobile_home_prov.png"  width="32%">
-<img src="/screen/mobile_detail.png"  width="32%">
+
+![mobile](./screen/mobile_home.png)
+![mobile](./screen/mobile_home_prov.png)
+![mobile](./screen/mobile_detail.png)
