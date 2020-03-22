@@ -18,7 +18,7 @@ Data from https://github.com/mathdroid/indonesia-covid-19-api
 
 ### `Desktop : `
 
-![web](./screen/desktop.png)
+![web](./screen/desktop.PNG)
 ![web](./screen/desktop_prov.png)
 
 ### `Mobile : `
