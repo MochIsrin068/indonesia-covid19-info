@@ -14,7 +14,7 @@ Data from https://github.com/mathdroid/indonesia-covid-19-api
 - npm install
 - npm start
   
-## 'Screen'
+## `Screen`
 ### `Desktop : `
 <img src="/screen/desktop.png"><br/>
 <img src="/screen/desktop_prov.png">
