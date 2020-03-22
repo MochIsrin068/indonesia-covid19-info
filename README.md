@@ -23,7 +23,7 @@ Data from https://github.com/mathdroid/indonesia-covid-19-api
 
 ### `Mobile : `
 
-![mobile](/screen/mobile_home.png)
+![mobile](https://raw.githubusercontent.com/MochIsrin068/indonesia-covid19-info/master/screen/mobile_home.png)
 ![mobile](./screen/mobile_home_prov.png)
 ![mobile](./screen/mobile_detail.png)
 <img src="/screen/mobile_detail.png">
