@@ -1,0 +1,114 @@
+.covid__title {
+  width: 100%;
+  background-color: #e8e8e8;
+  padding: 10px 30px 10px 30px;
+
+  &__rows{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__left{
+        > p {
+            color: red;
+            font-size: 12px;
+          }
+      }
+
+      &__right{
+          border: 1px solid rgb(23, 148, 140);
+          padding: 4px 10px;
+          border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            >p{
+                margin-left: 4px;
+                font-size: 12px;
+            }
+
+            &:hover{
+                background-color: rgb(23, 148, 140);
+                path{fill: #fff;}
+                >p{
+                    color: #fff;
+                }
+                 
+                >i{
+                    color: #fff;
+                }
+            }
+      }
+  }
+
+}
+
+.covid__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  object-fit: cover;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 10px 30px 10px 30px;
+  background-color: #e8e8e8;
+
+  @media #{$tablet} {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  @media #{$phone} {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  &__confirmed,
+  &__recovery,
+  &__recovered,
+  &__death {
+    background-color: map-get($colors, PURE_WHITE);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+    height: 180px;
+    // width: 49%;
+    border-radius: 4px;
+    flex-direction: column;
+    -webkit-box-shadow: 5px 5px 25px -13px #969696;
+    box-shadow: 5px 5px 25px -13px #969696;
+
+    > h2 {
+      font-size: 3.5em;
+    }
+
+    >p{
+        font-size: 20px;
+    }
+  }
+
+  &__confirmed {
+    > h2 {
+      color: #f2c94c;
+    }
+  }
+
+  &__recovery {
+    > h2 {
+      color: #f5a623;
+    }
+  }
+
+  &__recovered {
+    > h2 {
+      color: #219653;
+    }
+  }
+
+  &__death {
+    > h2 {
+      color: #d8232a;
+    }
+  }
+}
