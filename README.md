@@ -18,7 +18,6 @@ Data from https://github.com/mathdroid/indonesia-covid-19-api
 
 ### `Desktop : `
 
-<<<<<<< HEAD
 ![web](./screen/desktop.png)
 ![web](./screen/desktop_prov.png)
 
@@ -27,13 +26,3 @@ Data from https://github.com/mathdroid/indonesia-covid-19-api
 ![mobile](./screen/mobile_home.png)
 ![mobile](./screen/mobile_home_prov.png)
 ![mobile](./screen/mobile_detail.png)
-=======
-<img src="/screen/desktop.png"/><br/>
-<img src="/screen/desktop_prov.png"/>
-
-### `Mobile : `
-
-<img src="/screen/mobile_home.png" width="32%"/>
-<img src="/screen/mobile_home_prov.png" width="32%"/>
-<img src="/screen/mobile_detail.png" width="32%"/>
->>>>>>> 94c939e0173c70739b30b222fc2476505952d226
