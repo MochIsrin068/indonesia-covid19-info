@@ -2,19 +2,20 @@ import React, { Component } from "react";
 import { FETCH_BY_CASES } from "../../services/Model";
 import { ReactComponent as IconLeft } from "../../images/arrow-left.svg";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default class Detail extends Component {
   state = {
-    data: {},
-    isLoading: true
+    data: [],
+    isLoading: true,
   };
 
   componentDidMount() {
-    FETCH_BY_CASES().then(response => {
+    FETCH_BY_CASES().then((response) => {
       this.setState(
         {
-          data: response.data.nodes,
-          isLoading: false
+          data: response.data,
+          isLoading: false,
         },
         () => console.log(this.state.data)
       );
@@ -29,6 +30,11 @@ export default class Detail extends Component {
 
     return (
       <>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>IDN COVID 19 INFO - {province}</title>
+          <meta name="indonesia covid19" content="covid19" />
+        </Helmet>
         <div className="detail">
           <Link to="/">
             <IconLeft />
@@ -60,46 +66,57 @@ export default class Detail extends Component {
           ) : (
             <div className="detail__grid">
               {data
-                .filter(v => {
-                  return v.klasterid == id;
+                .filter((v) => {
+                  return v.provinsi == id;
                 })
-                .map(v => {
+                .map((v) => {
                   return (
                     <div className="detail__grid__item">
                       <p className="detail__grid__item__case">
-                        {language == "ID" ? "Kasus" : "Cases"} {v.kasus}
+                        {language == "ID" ? "Kasus" : "Cases"} {v.id_pasien}
                       </p>
                       <p className="detail__grid__item__age">
                         {v.umur} {language === "ID" ? "Tahun" : "Years Old"}
                       </p>
                       <p className="detail__grid__item__gender">
-                        {v.gender === "Perempuan" && language === "ID"
+                        {v.jenis_kelamin === 1 && language === "ID"
                           ? "Perempuan"
-                          : v.gender === "Perempuan" && language === "EN"
+                          : v.jenis_kelamin === 1 && language === "EN"
                           ? "Female"
-                          : v.gender === "Laki-laki" && language === "ID"
+                          : v.jenis_kelamin === 0 && language === "ID"
                           ? "Laki-laki"
                           : "Male"}
                       </p>
                       <p
                         style={{
-                          color:
-                            v.status === "Meninggal"
-                              ? "red"
-                              : v.status === "Dalam Perawatan"
-                              ? "#f2c94c"
-                              : "green"
+                          whiteSpace: "nowrap",
+                          overflow: "hidden",
+                          fontSize: 12,
+                          width: "100%",
+                          textAlign: "center",
                         }}
                       >
-                        {v.status === "Meninggal" && language === "ID"
+                        "{v.keterangan}"
+                      </p>
+                      <p
+                        style={{
+                          color:
+                            v.id_status === 2
+                              ? "red"
+                              : v.id_status === 1
+                              ? "#f2c94c"
+                              : "green",
+                        }}
+                      >
+                        {v.id_status === 2 && language === "ID"
                           ? "Meninggal"
-                          : v.status === "Meninggal" && language === "EN"
+                          : v.id_status === 2 && language === "EN"
                           ? "Death"
-                          : v.status === "Dalam Perawatan" && language === "ID"
+                          : v.id_status === 1 && language === "ID"
                           ? "Dalam Perawatan"
-                          : v.status === "Dalam Perawatan" && language === "EN"
+                          : v.id_status === 1 && language === "EN"
                           ? "Recovery"
-                          : v.status === "Sembuh" && language === "ID"
+                          : v.id_status === 0 && language === "ID"
                           ? "Sembuh"
                           : "Recovered"}
                       </p>

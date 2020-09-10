@@ -2,20 +2,21 @@ import React, { Component } from "react";
 import { FETCH_GENERAL_DATA } from "../../services/Model";
 import Search from "./sections/search";
 import { ReactComponent as IconLanguage } from "../../images/languange.svg";
+import { Helmet } from "react-helmet";
 
 export default class Home extends Component {
   state = {
     isLoading: true,
     data: {},
-    language: "ID"
+    language: "ID",
   };
 
   componentDidMount() {
-    FETCH_GENERAL_DATA().then(response => {
+    FETCH_GENERAL_DATA().then((response) => {
       this.setState(
         {
           isLoading: false,
-          data: response
+          data: response,
         },
         localStorage.setItem("lang", "ID")
       );
@@ -26,12 +27,12 @@ export default class Home extends Component {
     if (localStorage.getItem("lang") === "ID") {
       localStorage.setItem("lang", "EN");
       this.setState({
-        language: "EN"
+        language: "EN",
       });
     } else {
       localStorage.setItem("lang", "ID");
       this.setState({
-        language: "ID"
+        language: "ID",
       });
     }
   };
@@ -50,6 +51,11 @@ export default class Home extends Component {
     } else {
       return (
         <>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>IDN COVID 19 INFO</title>
+            <meta name="indonesia covid19" content="covid19" />
+          </Helmet>
           <div className="covid__title">
             <div className="covid__title__rows">
               <div className="covid__title__rows__left">
